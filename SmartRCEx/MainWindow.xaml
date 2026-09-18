@@ -11,61 +11,37 @@
         Height="450"
         Width="800"
         WindowState="Maximized">
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Content="亀谷競馬サロン" Click="KeibaSalonButton_Click" />
+            <Button Content="UMACA" Click="UmakaButton_Click"/>
+            <Button Content="JRA" Click="JRAButton_Click"/>
+            <Button Content="Youtube" Click="JRAYoutubeButton_Click"/>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
     <Grid>
-        <DockPanel Background="LightGray">
-            <!-- 画面上部：チャンネル切り替えボタン -->
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="2">
-                <Button
-                    x:Name="KeibaSalonButton"
-                    Content="亀谷競馬サロン"
-                    Width="80"
-                    Margin="0,0,5,0"
-                    Click="KeibaSalonButton_Click"/>
-                <Button
-                    x:Name="Channel1Button"
-                    Content="UMACA"
-                    Width="70"
-                    Margin="0,0,5,0"
-                    Click="UmakaButton_Click" />
-                <Button
-                    x:Name="Channel2Button"
-                    Content="JRA"
-                    Width="70"
-                    Margin="0,0,5,0"
-                    Click="JRAButton_Click" />
-                <Button
-                    x:Name="YoutubeButton"
-                    Content="Youtube"
-                    Width="70"
-                    Click="JRAYoutubeButton_Click"/>
-            </StackPanel>
-            
-            <!-- 左右分割ビュー -->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" MinWidth="200" />
-                    <ColumnDefinition Width="5" />
-                    <ColumnDefinition Width="*" MinWidth="200" />
-                </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="200" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" MinWidth="200" />
+        </Grid.ColumnDefinitions>
 
-                <!-- 左画面：固定URL -->
-                <cef:ChromiumWebBrowser
-                    Grid.Column="0"
-                    Address="https://www.smartrc.jp/v3/" />
+        <!-- 左画面：固定URL -->
+        <cef:ChromiumWebBrowser
+            Grid.Column="0"
+            Address="https://www.smartrc.jp/v3/" />
 
-                <GridSplitter
-                    Grid.Column="1"
-                    Width="5"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    Background="Gray"
-                    ShowsPreview="True" />
+        <GridSplitter
+            Grid.Column="1"
+            Width="5"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Background="Gray"
+            ShowsPreview="True" />
 
-                <cef:ChromiumWebBrowser
-                    x:Name="RightBrowser"
-                    Grid.Column="2"
-                    Address="https://www.ipat.jra.go.jp/sp/umaca/" />
-            </Grid>
-        </DockPanel>
+        <cef:ChromiumWebBrowser
+            x:Name="RightBrowser"
+            Grid.Column="2"
+            Address="https://www.ipat.jra.go.jp/sp/umaca/" />
     </Grid>
 </mah:MetroWindow>
