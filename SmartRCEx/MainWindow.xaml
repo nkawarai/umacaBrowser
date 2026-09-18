@@ -13,6 +13,10 @@
         WindowState="Maximized">
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
+            <Button Content="東京天気" Click="WeatherTokyoButton_Click"/>
+            <Button Content="中山天気" Click="WeatherNakayamaButton_Click"/>
+            <Button Content="京都天気" Click="WeatherKyotoButton_Click"/>
+            <Button Content="阪神天気" Click="WeatherHanshinButton_Click"/>
             <Button Content="亀谷競馬サロン" Click="KeibaSalonButton_Click" />
             <Button Content="UMACA" Click="UmakaButton_Click"/>
             <Button Content="JRA" Click="JRAButton_Click"/>
