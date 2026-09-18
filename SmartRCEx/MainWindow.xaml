@@ -1,0 +1,71 @@
+﻿<mah:MetroWindow x:Class="SmartRCEx.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:SmartRCEx"
+        mc:Ignorable="d"
+        Title="スマート出馬表Ex"
+        Height="450"
+        Width="800"
+        WindowState="Maximized">
+    <Grid>
+        <DockPanel Background="LightGray">
+            <!-- 画面上部：チャンネル切り替えボタン -->
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="2">
+                <Button
+                    x:Name="KeibaSalonButton"
+                    Content="亀谷競馬サロン"
+                    Width="80"
+                    Margin="0,0,5,0"
+                    Click="KeibaSalonButton_Click"/>
+                <Button
+                    x:Name="Channel1Button"
+                    Content="UMACA"
+                    Width="70"
+                    Margin="0,0,5,0"
+                    Click="UmakaButton_Click" />
+                <Button
+                    x:Name="Channel2Button"
+                    Content="JRA"
+                    Width="70"
+                    Margin="0,0,5,0"
+                    Click="JRAButton_Click" />
+                <Button
+                    x:Name="YoutubeButton"
+                    Content="Youtube"
+                    Width="70"
+                    Click="JRAYoutubeButton_Click"/>
+            </StackPanel>
+            
+            <!-- 左右分割ビュー -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="200" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" MinWidth="200" />
+                </Grid.ColumnDefinitions>
+
+                <!-- 左画面：固定URL -->
+                <cef:ChromiumWebBrowser
+                    Grid.Column="0"
+                    Address="https://www.smartrc.jp/v3/" />
+
+                <GridSplitter
+                    Grid.Column="1"
+                    Width="5"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Background="Gray"
+                    ShowsPreview="True" />
+
+                <cef:ChromiumWebBrowser
+                    x:Name="RightBrowser"
+                    Grid.Column="2"
+                    Address="https://www.ipat.jra.go.jp/sp/umaca/" />
+            </Grid>
+        </DockPanel>
+    </Grid>
+</mah:MetroWindow>

@@ -3,6 +3,10 @@
     <Platform Name="Any CPU" />
     <Platform Name="x64" />
   </Configurations>
+  <Project Path="SmartRCEx/SmartRCEx.csproj" Id="2954d58e-0159-4011-8117-e9e9d9493a0e">
+    <Platform Solution="*|x64" Project="x64" />
+    <Build Solution="*|Any CPU" Project="false" />
+  </Project>
   <Project Path="UMACABrowser/UMACABrowser.csproj">
     <Platform Solution="*|x64" Project="x64" />
     <Build Solution="*|Any CPU" Project="false" />
