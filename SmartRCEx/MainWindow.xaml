@@ -10,7 +10,8 @@
         Title="スマート出馬表Ex"
         Height="450"
         Width="800"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Icon="icon.ico">
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
             <Button Content="東京天気" Click="WeatherTokyoButton_Click"/>
